@@ -3,10 +3,10 @@ from telegram import CallbackQuery
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from DAXXMUSIC import YouTube, app
-from DAXXMUSIC.core.call import DAXX
-from DAXXMUSIC.misc import SUDOERS, db
-from DAXXMUSIC.utils.database import (
+from Mitsuri import YouTube, app
+from Mitsuri.core.call import Mitsuri 
+from Mitsuri.misc import SUDOERS, db
+from Mitsuri.utils.database import (
     get_active_chats,
     get_lang,
     get_upvote_count,
@@ -23,12 +23,12 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from DAXXMUSIC.utils.database import get_assistant
-from DAXXMUSIC.utils.decorators.language import languageCB
-from DAXXMUSIC.utils.formatters import seconds_to_min
-from DAXXMUSIC.utils.inline import close_markup, stream_markup, stream_markup_timer
-from DAXXMUSIC.utils.stream.autoclear import auto_clean
-from DAXXMUSIC.utils.thumbnails import get_thumb
+from Mitsuri.utils.database import get_assistant
+from Mitsuri.utils.decorators.language import languageCB
+from Mitsuri.utils.formatters import seconds_to_min
+from Mitsuri.utils.inline import close_markup, stream_markup, stream_markup_timer
+from Mitsuri.utils.stream.autoclear import auto_clean
+from Mitsuri.utils.thumbnails import get_thumb
 from config import (
     BANNED_USERS,
     SOUNCLOUD_IMG_URL,
@@ -242,7 +242,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await DAXX.skip_stream(chat_id, link, video=status, image=image)
+                await Mitsuri.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -278,7 +278,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await DAXX.skip_stream(chat_id, file_path, video=status, image=image)
+                await Mitsuri.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -299,7 +299,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await DAXX.skip_stream(chat_id, videoid, video=status)
+                await Mitsuri.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup(_, chat_id)
@@ -322,7 +322,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await DAXX.skip_stream(chat_id, queued, video=status, image=image)
+                await Mitsuri.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             if videoid == "telegram":
