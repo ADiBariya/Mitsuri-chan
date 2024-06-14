@@ -5,7 +5,7 @@ import heroku3
 from pyrogram import filters
 
 import config
-from DAXXMUSIC.core.mongo import mongodb
+from Mitsuri.core.mongo import mongodb
 
 from .logging import LOGGER
 
@@ -39,7 +39,7 @@ XCB = [
 def dbb():
     global db
     db = {}
-    LOGGER(__name__).info(f"𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 𝗟𝗢𝗔𝗗 𝗕𝗔𝗕𝗬🍫........")
+    LOGGER(__name__).info(f"Database loaded .......")
 
 
 async def sudo():
