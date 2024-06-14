@@ -1,11 +1,11 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DAXXMUSIC import app
-from DAXXMUSIC.core.call import DAXX
-from DAXXMUSIC.utils.database import is_music_playing, music_on
-from DAXXMUSIC.utils.decorators import AdminRightsCheck
-from DAXXMUSIC.utils.inline import close_markup
+from Mitsuri import app
+from Mitsuri.core.call import Mitsuri 
+from Mitsuri.utils.database import is_music_playing, music_on
+from Mitsuri.utils.decorators import AdminRightsCheck
+from Mitsuri.utils.inline import close_markup
 from config import BANNED_USERS
 
 
