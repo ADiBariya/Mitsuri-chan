@@ -9,18 +9,6 @@ GO TO [RELOAD.PY](https://github.com/mikeyy223254/Mitsuri/blob/Master/Mitsuri/pl
   <img src="https://telegra.ph/file/06cdb9edd59ac36649baa.jpg">
 </p>
 
-<p align="center">
-<b>𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦</b>
-</p>
-
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
-</h3>
-
-
-
-[![Contributors](https://contrib.rocks/image?repo=mikeyy23254/Mitsuri-chan)](https://github.com/mikeyy23524/Mitsuri-chan/graphs/contributors)
-
 ### Contact :
 <a href="https://t.me/Ahjin_sprt"><img title="Telegram" src="https://img.shields.io/badge/Telegram-%23000000.svg?&style=for-the-badge&logo=telegram&logoColor=61DAFB"></a>
 
