@@ -1,8 +1,8 @@
-from DAXXMUSIC.utils.daxx_ban import admin_filter
+from Mitsuri.utils.mitsuri_ban import admin_filter
 import os
 import csv
 from pyrogram import Client, filters
-from DAXXMUSIC import app
+from Mitsuri import app
 
 @app.on_message(filters.command("user") & admin_filter)
 def user_command(client, message):
@@ -29,7 +29,7 @@ def user_command(client, message):
 
 
 # Command handler for /givelink command
-@app.on_message(filters.command("givelink"))
+@app.on_message(filters.command("invitelink"))
 async def give_link_command(client, message):
     # Generate an invite link for the chat where the command is used
     chat = message.chat.id
