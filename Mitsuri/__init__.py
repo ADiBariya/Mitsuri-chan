@@ -1,8 +1,8 @@
-from DAXXMUSIC.core.bot import DAXX
-from DAXXMUSIC.core.dir import dirr
-from DAXXMUSIC.core.git import git
-from DAXXMUSIC.core.userbot import Userbot
-from DAXXMUSIC.misc import dbb, heroku
+from Mitsuri.core.bot import Mitsuri
+from Mitsuri.core.dir import dirr
+from Mitsuri.core.git import git
+from Mitsuri.core.userbot import Userbot
+from Mitsuri.misc import dbb, heroku
 
 from SafoneAPI import SafoneAPI
 from .logging import LOGGER
@@ -12,7 +12,7 @@ git()
 dbb()
 heroku()
 
-app = DAXX()
+app = Mitsuri()
 api = SafoneAPI()
 userbot = Userbot()
 
