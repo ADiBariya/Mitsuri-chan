@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DAXXMUSIC import app
-from DAXXMUSIC.utils.database import get_loop, set_loop
-from DAXXMUSIC.utils.decorators import AdminRightsCheck
-from DAXXMUSIC.utils.inline import close_markup
+from Mitsuri import app
+from Mitsuri.utils.database import get_loop, set_loop
+from Mitsuri.utils.decorators import AdminRightsCheck
+from Mitsuri.utils.inline import close_markup
 from config import BANNED_USERS
 
 
