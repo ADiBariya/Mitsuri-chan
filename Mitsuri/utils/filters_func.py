@@ -1,8 +1,8 @@
 from enum import Enum, auto
-from DAXXMUSIC import app
+from Mitsuri import app
 from pyrogram.types import InlineKeyboardMarkup, Message
-from DAXXMUSIC.utils.msg_types import button_markdown_parser
-from DAXXMUSIC.utils.notes_func import NoteFillings
+from Mitsuri.utils.msg_types import button_markdown_parser
+from Mitsuri.utils.notes_func import NoteFillings
 from emojis import decode
 from pyrogram.types import Message
 
