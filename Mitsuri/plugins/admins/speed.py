@@ -1,13 +1,13 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DAXXMUSIC import app
-from DAXXMUSIC.core.call import DAXX
-from DAXXMUSIC.misc import SUDOERS, db
-from DAXXMUSIC.utils import AdminRightsCheck
-from DAXXMUSIC.utils.database import is_active_chat, is_nonadmin_chat
-from DAXXMUSIC.utils.decorators.language import languageCB
-from DAXXMUSIC.utils.inline import close_markup, speed_markup
+from Mitsuri import app
+from Mitsuri.core.call import DAXX
+from Mitsuri.misc import SUDOERS, db
+from Mitsuri.utils import AdminRightsCheck
+from Mitsuri.utils.database import is_active_chat, is_nonadmin_chat
+from Mitsuri.utils.decorators.language import languageCB
+from Mitsuri.utils.inline import close_markup, speed_markup
 from config import BANNED_USERS, adminlist
 
 checker = []
