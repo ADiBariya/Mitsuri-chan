@@ -2,7 +2,7 @@ import asyncio, os, time, aiohttp
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from asyncio import sleep
-from DAXXMUSIC import app
+from Mitsuri import app
 from pyrogram import filters, Client, enums
 from pyrogram.enums import ParseMode
 from pyrogram.types import *
@@ -10,11 +10,11 @@ from typing import Union, Optional
 import random
 
 random_photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "https://telegra.ph/file/1f6897d4e8a4b0fa954d8.jpg",
+    "https://telegra.ph/file/93d783ef02202da8e1ff2.jpg",
+    "https://te.legra.ph/file/c8f5a737531b2aea70769.jpg",
+    "https://te.legra.ph/file/d545bba8fd3ea99bb11cc.jpg",
+    "https://telegra.ph/file/d5a4c734caf676ff527b1.jpg",
 ]
 
 # --------------------------------------------------------------------------------- #
@@ -66,8 +66,8 @@ async def get_userinfo_img(
 
 # --------------------------------------------------------------------------------- #
 
-bg_path = "DAXXMUSIC/assets/userinfo.png"
-font_path = "DAXXMUSIC/assets/hiroko.ttf"
+bg_path = "Mitsuri/assets/userinfo.png"
+font_path = "Mitsuri/assets/hiroko.ttf"
 
 # --------------------------------------------------------------------------------- #
 
