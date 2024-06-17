@@ -1,8 +1,8 @@
 import math
 from pyrogram.types import InlineKeyboardButton
-from DAXXMUSIC import app
+from Mitsuri import app
 import config
-from DAXXMUSIC.utils.formatters import time_to_seconds
+from Mitsuri.utils.formatters import time_to_seconds
 
 
 def track_markup(_, videoid, user_id, channel, fplay):
