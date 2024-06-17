@@ -1,14 +1,14 @@
 import random
 from pyrogram import filters
-from DAXXMUSIC import app
-from DAXXMUSIC import *
+from Mitsuri import app
+from Mitsuri import *
 from ... import *
 import config
 
 from ...logging import LOGGER
 
-from DAXXMUSIC import app, userbot
-from DAXXMUSIC.core.userbot import *
+from Mitsuri import app, userbot
+from Mitsuri.core.userbot import *
 
 import asyncio
 
@@ -19,18 +19,18 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from dotenv import load_dotenv
-from DAXXMUSIC.core.userbot import Userbot
+from Mitsuri.core.userbot import Userbot
 from datetime import datetime
 
 # Assuming Userbot is defined elsewhere
 userbot = Userbot()
 
 
-BOT_LIST = ["IAM_DAXXBOT", "NexikoBot", "GitWizardBot", "stringseasonrobot", "LivioXBot"]
+BOT_LIST = ["Mitsuri_Robot", "DazaiProBot", "Cha_Hae_In_Bot ", "Sung_Jin_Woo_Bot", "Shinobu_Bot"]
 
 @app.on_message(filters.command("botschk") & filters.user(OWNER_ID))
 async def bots_chk(_, message):
-    msg = await message.reply_photo(photo="https://telegra.ph/file/4d303296e4fac9a40ea07.jpg", caption="**ᴄʜᴇᴄᴋɪɴɢ ʙᴏᴛs sᴛᴀᴛs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ...**")
+    msg = await message.reply_photo(photo="https://te.legra.ph/file/45ecbe8b5430f2f845ece.jpg", caption="**ᴄʜᴇᴄᴋɪɴɢ ʙᴏᴛs sᴛᴀᴛs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ...**")
     response = "**ᴄʜᴇᴄᴋɪɴɢ ʙᴏᴛs sᴛᴀᴛs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ**\n\n"
     for bot_username in BOT_LIST:
         try:
@@ -41,7 +41,7 @@ async def bots_chk(_, message):
             await asyncio.sleep(3)
             async for bot_message in app.get_chat_history(bot_id, limit=1):
                 if bot_message.from_user.id == bot_id:
-                    response += f"╭⎋ [{bot.first_name}](tg://user?id={bot.id})\n╰⊚ **sᴛᴀᴛᴜs: ᴏɴʟɪɴᴇ ✨**\n\n"
+                    response += f"╭⎋ [{bot.first_name}](tg://user?id={bot.id})\n╰⊚ **sᴛᴀᴛᴜs: ᴏɴʟɪɴᴇ 🍡**\n\n"
                 else:
                     response += f"╭⎋ [{bot.first_name}](tg://user?id={bot.id})\n╰⊚ **sᴛᴀᴛᴜs: ᴏғғʟɪɴᴇ ❄**\n\n"
         except Exception:
