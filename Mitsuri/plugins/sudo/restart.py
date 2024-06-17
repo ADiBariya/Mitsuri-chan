@@ -18,7 +18,7 @@ from DAXXMUSIC.utils.database import (
     remove_active_video_chat,
 )
 from DAXXMUSIC.utils.decorators.language import language
-from DAXXMUSIC.utils.pastebin import DAXXBin
+from DAXXMUSIC.utils.pastebin import MitsuriBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
