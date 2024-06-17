@@ -7,12 +7,12 @@ from youtubesearchpython.__future__ import VideosSearch
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto
 import config
-from DAXXMUSIC import app
-from DAXXMUSIC.misc import _boot_
-from DAXXMUSIC.plugins.sudo.sudoers import sudoers_list
-from DAXXMUSIC.utils.database import get_served_chats, get_served_users, get_sudoers
-from DAXXMUSIC.utils import bot_sys_stats
-from DAXXMUSIC.utils.database import (
+from Mitsuri import app
+from Mitsuri.misc import _boot_
+from Mitsuri.plugins.sudo.sudoers import sudoers_list
+from Mitsuri.utils.database import get_served_chats, get_served_users, get_sudoers
+from Mitsuri.utils import bot_sys_stats
+from Mitsuri.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -20,23 +20,19 @@ from DAXXMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from DAXXMUSIC.utils.decorators.language import LanguageStart
-from DAXXMUSIC.utils.formatters import get_readable_time
-from DAXXMUSIC.utils.inline import help_pannel, private_panel, start_panel
+from Mitsuri.utils.decorators.language import LanguageStart
+from Mitsuri.utils.formatters import get_readable_time
+from Mitsuri.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
 #--------------------------
 
 NEXI_VID = [
-"https://telegra.ph/file/1a3c152717eb9d2e94dc2.mp4",
-"https://graph.org/file/ba7699c28dab379b518ca.mp4",
-"https://graph.org/file/83ebf52e8bbf138620de7.mp4",
-"https://graph.org/file/82fd67aa56eb1b299e08d.mp4",
-"https://graph.org/file/318eac81e3d4667edcb77.mp4",
-"https://graph.org/file/7c1aa59649fbf3ab422da.mp4",
-"https://graph.org/file/2a7f857f31b32766ac6fc.mp4",
-
+"https://telegra.ph/file/ed5863afec52e7eb36554.mp4",
+"https://telegra.ph/file/b1f7bd1d068b35605db4b.mp4",
+"https://telegra.ph/file/8deec28381fc05c69e21f.mp4",
+"https://telegra.ph/file/8deec28381fc05c69e21f.mp4",
 ]
 
 
