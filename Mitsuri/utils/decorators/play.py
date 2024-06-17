@@ -9,9 +9,9 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from DAXXMUSIC import YouTube, app
-from DAXXMUSIC.misc import SUDOERS
-from DAXXMUSIC.utils.database import (
+from Mitsuri import YouTube, app
+from Mitsuri.misc import SUDOERS
+from MItsuri.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
