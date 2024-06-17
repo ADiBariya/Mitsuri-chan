@@ -1,7 +1,7 @@
 import asyncio
 
-from DAXXMUSIC.misc import db
-from DAXXMUSIC.utils.database import get_active_chats, is_music_playing
+from Mitsuri.misc import db
+from Mitsuri.utils.database import get_active_chats, is_music_playing
 
 
 async def timer():
