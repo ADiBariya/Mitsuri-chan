@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DAXXMUSIC import app
-from DAXXMUSIC.misc import SUDOERS
-from DAXXMUSIC.utils.database import blacklist_chat, blacklisted_chats, whitelist_chat
-from DAXXMUSIC.utils.decorators.language import language
+from Mitsuri import app
+from Mitsuri.misc import SUDOERS
+from Mitsuri.utils.database import blacklist_chat, blacklisted_chats, whitelist_chat
+from Mitsuri.utils.decorators.language import language
 from config import BANNED_USERS
 
 
