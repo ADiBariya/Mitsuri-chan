@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from DAXXMUSIC import app
-from DAXXMUSIC.utils.database import get_playmode, get_playtype, is_nonadmin_chat
-from DAXXMUSIC.utils.decorators import language
-from DAXXMUSIC.utils.inline.settings import playmode_users_markup
+from Mitsuri import app
+from Mitsuri.utils.database import get_playmode, get_playtype, is_nonadmin_chat
+from Mitsuri.utils.decorators import language
+from Mitsuri.utils.inline.settings import playmode_users_markup
 from config import BANNED_USERS
 
 
