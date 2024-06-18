@@ -4,7 +4,7 @@ from Mitsuri import app, userbot
 from Mitsuri.misc import SUDOERS
 from pyrogram import * 
 from pyrogram.types import *
-from Mitsuri.utils.daxx_ban import admin_filter
+from Mitsuri.utils.misturi_ban import admin_filter
 
 
 
@@ -71,13 +71,13 @@ async def restriction_app(app :app, message):
                     await message.reply(random.choice(strict_txt))          
                 else:
                     await app.ban_chat_member(chat_id, user_id)
-                    await message.reply("OK, Ban kar diya madrchod ko sala Chutiya tha !")
+                    await message.reply("Yoshh!!,Ban")
                     
         for unbanned in data:
             print(f"present {unbanned}")
             if unbanned in unban:
                 await app.unban_chat_member(chat_id, user_id)
-                await message.reply(f"Ok, aap bolte hai to unban kar diya") 
+                await message.reply(f"Ehhh,Unban") 
                 
         for kicked in data:
             print(f"present {kicked}")
@@ -88,7 +88,7 @@ async def restriction_app(app :app, message):
                 else:
                     await app.ban_chat_member(chat_id, user_id)
                     await app.unban_chat_member(chat_id, user_id)
-                    await message.reply("get lost! bhga diya bhosdi wale ko") 
+                    await message.reply("Time To Leave Village") 
                     
         for muted in data:
             print(f"present {muted}") 
@@ -99,14 +99,14 @@ async def restriction_app(app :app, message):
                 else:
                     permissions = ChatPermissions(can_send_messages=False)
                     await message.chat.restrict_member(user_id, permissions)
-                    await message.reply(f"muted successfully! Disgusting people.") 
+                    await message.reply(f"Muted") 
                     
         for unmuted in data:
             print(f"present {unmuted}")            
             if unmuted in unmute:
                 permissions = ChatPermissions(can_send_messages=True)
                 await message.chat.restrict_member(user_id, permissions)
-                await message.reply(f"Huh, OK, sir!")   
+                await message.reply(f"Yoshiii!!")   
 
 
         for promoted in data:
@@ -123,7 +123,7 @@ async def restriction_app(app :app, message):
                     can_manage_video_chats=True,
                        )
                      )
-                await message.reply("promoted !")
+                await message.reply("UwU Promoted !")
 
         for demoted in data:
             print(f"present {demoted}")            
@@ -139,7 +139,7 @@ async def restriction_app(app :app, message):
                     can_manage_video_chats=False,
                        )
                      )
-                await message.reply("demoted !")
+                await message.reply("~_~ Demoted !")
 
 
 #async def your_function():
@@ -157,4 +157,4 @@ async def restriction_app(app :app, message):
                 can_manage_video_chats=True,
                )
              )
-            await message.reply("fullpromoted !")
+            await message.reply("(^///^) Fullpromoted !")
