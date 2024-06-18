@@ -6,8 +6,8 @@ import pytgcalls
 import os, yt_dlp 
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pytgcalls.types import AudioVideoPiped
-from DAXXMUSIC.plugins.play import play
-from DAXXMUSIC.plugins.play.pornplay import play
+from Mitsuri.plugins.play import play
+from Mitsuri.plugins.play.pornplay import play
 
 #
 #####
