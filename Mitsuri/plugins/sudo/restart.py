@@ -10,15 +10,15 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from DAXXMUSIC import app
-from DAXXMUSIC.misc import HAPP, SUDOERS, XCB
-from DAXXMUSIC.utils.database import (
+from Mitsuri import app
+from Mitsuri.misc import HAPP, SUDOERS, XCB
+from Mitsuri.utils.database import (
     get_active_chats,
     remove_active_chat,
     remove_active_video_chat,
 )
-from DAXXMUSIC.utils.decorators.language import language
-from DAXXMUSIC.utils.pastebin import MitsuriBin
+from Mitsuri.utils.decorators.language import language
+from Mitsuri.utils.pastebin import MitsuriBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
