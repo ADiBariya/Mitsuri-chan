@@ -1,4 +1,4 @@
-from DAXXMUSIC import app
+from Mitsuri import app
 from pyrogram.errors import RPCError
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, InlineKeyboardButton
 from os import environ
@@ -16,7 +16,7 @@ from asyncio import sleep
 from pyrogram import filters, Client, enums
 from pyrogram.enums import ParseMode
 from logging import getLogger
-from DAXXMUSIC.utils.daxx_ban import admin_filter
+from Mitsuri.utils.mitsuri_ban import admin_filter
 from PIL import ImageDraw, Image, ImageFont, ImageChops
 from pyrogram import *
 from pyrogram.types import *
@@ -28,15 +28,15 @@ import os
 import re
 import asyncio
 import time
-from DAXXMUSIC.utils.database import add_served_chat
+from Mitsuri.utils.database import add_served_chat
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from DAXXMUSIC.utils.database import get_assistant
+from Mitsuri.utils.database import get_assistant
 import asyncio
-from DAXXMUSIC.misc import SUDOERS
-from DAXXMUSIC.mongo.afkdb import PROCESS
+from Mitsuri.misc import SUDOERS
+from Mitsuri.mongo.afkdb import PROCESS
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
-from DAXXMUSIC import app
+from Mitsuri import app
 import asyncio
 import random
 from pyrogram import Client, filters
@@ -47,16 +47,16 @@ from pyrogram.errors import (
     UserAlreadyParticipant,
     UserNotParticipant,
 )
-from DAXXMUSIC.utils.database import get_assistant, is_active_chat
+from Mitsuri.utils.database import get_assistant, is_active_chat
 
 
 
 random_photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "https://te.legra.ph/file/893c0fe726127a98cc81d.jpg",
+    "https://te.legra.ph/file/893c0fe726127a98cc81d.jpg",
+    "https://te.legra.ph/file/893c0fe726127a98cc81d.jpg",
+    "https://te.legra.ph/file/893c0fe726127a98cc81d.jpg",
+    "https://te.legra.ph/file/893c0fe726127a98cc81d.jpg",
 ]
 # --------------------------------------------------------------------------------- #
 
@@ -106,13 +106,13 @@ def circle(pfp, size=(500, 500), brightness_factor=10):
     return pfp
 
 def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
-    background = Image.open("DAXXMUSIC/assets/wel2.png")
+    background = Image.open("Mitsuri/assets/wel2.png")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp, brightness_factor=brightness_factor) 
     pfp = pfp.resize((635, 635))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=70)
-    welcome_font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=61)
+    font = ImageFont.truetype('Mitsuri/assets/font.ttf', size=70)
+    welcome_font = ImageFont.truetype('Mitsuri/assets/font.ttf', size=61)
     #draw.text((630, 540), f'ID: {id}', fill=(255, 255, 255), font=font)
     #
  #   draw.text((630, 300), f'NAME: {user}', fill=(255, 255, 255), font=font)
@@ -177,7 +177,7 @@ async def greet_new_member(_, member: ChatMemberUpdated):
                 user.photo.big_file_id, file_name=f"pp{user.id}.png"
             )
         except AttributeError:
-            pic = "DAXXMUSIC/assets/upic.png"
+            pic = "Mitsuri/assets/upic.png"
         if (temp.MELCOW).get(f"welcome-{member.chat.id}") is not None:
             try:
                 await temp.MELCOW[f"welcome-{member.chat.id}"].delete()
@@ -187,8 +187,8 @@ async def greet_new_member(_, member: ChatMemberUpdated):
             welcomeimg = welcomepic(
                 pic, user.first_name, member.chat.title, user.id, user.username
             )
-            button_text = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
-            add_button_text = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
+            button_text = "๏ View Member ๏"
+            add_button_text = "๏ Add Me ๏"
             deep_link = f"tg://openmessage?user_id={user.id}"
             add_link = f"https://t.me/{app.username}?startgroup=true"
             temp.MELCOW[f"welcome-{member.chat.id}"] = await app.send_photo(
@@ -232,7 +232,7 @@ async def add_all(client, message):
         lol = await message.reply("🔄 **ᴀᴅᴅɪɴɢ ɢɪᴠᴇɴ ʙᴏᴛ ɪɴ ᴀʟʟ ᴄʜᴀᴛs!**")
         
         async for dialog in userbot.get_dialogs():
-            if dialog.chat.id == -1001919135283:
+            if dialog.chat.id == -1001739122591:
                 continue
             try:
                 await userbot.add_chat_members(dialog.chat.id, app_id)
