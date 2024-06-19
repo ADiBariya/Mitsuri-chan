@@ -2,7 +2,7 @@ from Mitsuri import app
 from config import OWNER_ID
 from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Mitsuri.utils.Mitsuri_ban import admin_filter
+from Mitsuri.utils.mitsuri_ban import admin_filter
 
 BOT_ID = "6561748036"
 
