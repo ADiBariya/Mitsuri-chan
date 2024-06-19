@@ -1,7 +1,7 @@
 import re
 from Mitsuri import app
 from config import BOT_USERNAME
-from Mitsuri.utils.daxx_ban import admin_filter
+from Mitsuri.utils.mitsuri_ban import admin_filter
 from Mitsuri.mongo.filtersdb import *
 from Mitsuri.utils.filters_func import GetFIlterMessage, get_text_reason, SendFilterMessage
 from Mitsuri.utils.yumidb import user_admin
