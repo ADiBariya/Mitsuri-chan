@@ -5,7 +5,7 @@ from pyrogram.enums import ChatType
 
 import config
 from Mitsuri import app
-from Mitsuri.core.call import DAXX, autoend
+from Mitsuri.core.call import Mitsuri, autoend
 from Mitsuri.utils.database import get_client, is_active_chat, is_autoend
 
 
