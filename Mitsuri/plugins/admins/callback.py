@@ -53,7 +53,7 @@ async def unban_assistant(_, callback: CallbackQuery):
     
     try:
         await app.unban_chat_member(chat_id, userbot.id)
-        await callback.answer("(っ◔◡◔)っ ♥ ᴍʏ ᴀꜱꜱɪꜱᴛᴀɴᴛ ɪᴅ ᴜɴʙᴀɴɴᴇᴅ ꜱᴜᴄᴄᴇꜱꜰᴜʟʟʏ ♥\n\n➻ ♥ ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ꜱᴏɴɢꜱ🥰\n\n♥ ᴛʜᴀɴᴋ ʏᴏᴜ💝", show_alert=True)
+        await callback.answer("(っ◔◡◔)っ  ᴍʏ ᴀꜱꜱɪꜱᴛᴀɴᴛ ɪᴅ ᴜɴʙᴀɴɴᴇᴅ ꜱᴜᴄᴄᴇꜱꜰᴜʟʟʏ \n\n➻  ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ꜱᴏɴɢꜱ🥰\n\n♥ ᴛʜᴀɴᴋ ʏᴏᴜ💝", show_alert=True)
     except Exception as e:
         await callback.answer(f"≧ ﹏ ≦ ꜰᴀɪʟᴇᴅ ᴛᴏ ᴜɴʙᴀɴ ᴍʏ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴄᴀᴜꜱᴇ, ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ʙᴀᴋᴀ!!\n\n➻ ɢɪᴠᴇ ᴍᴇ ʙᴀɴ ʀɪɢʜᴛꜱ ʏᴏᴜ ʙᴀᴋᴀ!!", show_alert=True)
 
@@ -130,7 +130,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 [
                     [
                         InlineKeyboardButton(
-                            text=f"👍 {get_upvotes}",
+                            text=f"❤️‍🩹 {get_upvotes}",
                             callback_data=f"ADMIN  UpVote|{chat_id}_{counter}",
                         )
                     ]
@@ -155,7 +155,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await DAXX.pause_stream(chat_id)
+        await Mitsuri.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_2"].format(mention), reply_markup=close_markup(_)
         )
@@ -164,13 +164,13 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await DAXX.resume_stream(chat_id)
+        await Mitsuri.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_4"].format(mention), reply_markup=close_markup(_)
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await DAXX.stop_stream(chat_id)
+        await Mitsuri.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention), reply_markup=close_markup(_)
@@ -179,7 +179,7 @@ async def del_back_playlist(client, CallbackQuery, _):
     elif command == "Skip" or command == "Replay":
         check = db.get(chat_id)
         if command == "Skip":
-            txt = f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} 💕"
+            txt = f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} ❤️‍🩹"
             popped = None
             try:
                 popped = check.pop(0)
@@ -187,7 +187,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     await auto_clean(popped)
                 if not check:
                     await CallbackQuery.edit_message_text(
-                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} 💕"
+                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} ❤️‍🩹"
                     )
                     await CallbackQuery.message.reply_text(
                         text=_["admin_6"].format(
@@ -202,7 +202,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 try:
                     await CallbackQuery.edit_message_text(
-                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} 💕"
+                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🍡\n│ \n└ʙʏ : {mention} ❤️‍🩹"
                     )
                     await CallbackQuery.message.reply_text(
                         text=_["admin_6"].format(
@@ -214,7 +214,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     return
         else:
-            txt = f"➻ sᴛʀᴇᴀᴍ ʀᴇ-ᴘʟᴀʏᴇᴅ 🍡\n│ \n└ʙʏ : {mention} 💕"
+            txt = f"➻ sᴛʀᴇᴀᴍ ʀᴇ-ᴘʟᴀʏᴇᴅ 🍡\n│ \n└ʙʏ : {mention} ❤️‍🩹"
         await CallbackQuery.answer()
         queued = check[0]["file"]
         title = (check[0]["title"]).title()
