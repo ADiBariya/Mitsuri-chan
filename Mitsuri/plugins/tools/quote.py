@@ -1,7 +1,7 @@
 from io import BytesIO
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from DAXXMUSIC import app
+from Mitsuri import app
 from httpx import AsyncClient, Timeout
 # -----------------------------------------------------------------
 fetch = AsyncClient(
