@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from DAXXMUSIC import app
+from Mitsuri import app
 from config import OWNER_ID
 # vc on
 @app.on_message(filters.video_chat_started)
@@ -9,7 +9,7 @@ async def brah(_, msg):
 # vc off
 @app.on_message(filters.video_chat_ended)
 async def brah2(_, msg):
-       await msg.reply("**ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ**")
+       await msg.reply("**ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ 🥺**")
 
 # invite members on vc
 @app.on_message(filters.video_chat_members_invited)
@@ -23,7 +23,7 @@ async def brah3(app :app, message:Message):
              except Exception:
                pass
            try:
-             await message.reply(f"{text} 😉")
+             await message.reply(f"{text} ❤️‍🩹")
            except:
              pass
 
