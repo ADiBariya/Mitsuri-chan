@@ -196,7 +196,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await DAXX.stop_stream(chat_id)
+                        return await Mitsuri.stop_stream(chat_id)
                     except:
                         return
             except:
