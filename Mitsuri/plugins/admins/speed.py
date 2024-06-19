@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Mitsuri import app
-from Mitsuri.core.call import DAXX
+from Mitsuri.core.call import Mitsuri 
 from Mitsuri.misc import SUDOERS, db
 from Mitsuri.utils import AdminRightsCheck
 from Mitsuri.utils.database import is_active_chat, is_nonadmin_chat
@@ -94,7 +94,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         text=_["admin_32"].format(CallbackQuery.from_user.mention),
     )
     try:
-        await DAXX.speedup_stream(
+        await Mitsuri.speedup_stream(
             chat_id,
             file_path,
             speed,
