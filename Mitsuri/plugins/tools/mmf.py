@@ -3,7 +3,7 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from pyrogram import filters
 from pyrogram.types import Message
-from DAXXMUSIC import app
+from Mitsuri import app
 
 @app.on_message(filters.command("mmf"))
 async def mmf(_, message: Message):
@@ -14,7 +14,7 @@ async def mmf(_, message: Message):
         await message.reply_text("**Give me text after /mmf to memify.**")
         return
 
-    msg = await message.reply_text("**Memifying this image! ✊🏻**")
+    msg = await message.reply_text("**Memifying this image! 💕**")
     text = message.text.split(None, 1)[1]
     file = await app.download_media(reply_message)
 
@@ -36,7 +36,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "arial.ttf"
     else:
-        fnt = "./DAXXMUSIC/assets/default.ttf"
+        fnt = "./Mitsuri/assets/default.ttf"
 
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
 
