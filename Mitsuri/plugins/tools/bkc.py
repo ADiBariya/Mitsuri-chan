@@ -1,23 +1,23 @@
 import random
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from DAXXMUSIC import app
+from Mitsuir import app
 from config import SUPPORT_CHAT
 
 BUTTON = InlineKeyboardMarkup([[InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ", url=SUPPORT_CHAT)]])
 
-HOT = "https://telegra.ph/file/daad931db960ea40c0fca.gif"
-SMEXY = "https://telegra.ph/file/a23e9fd851fb6bc771686.gif"
-LEZBIAN = "https://telegra.ph/file/5609b87f0bd461fc36acb.gif"
-BIGBALL = "https://i.gifer.com/8ZUg.gif"
+HOT = "https://te.legra.ph/file/07226a85c3822d6ef3291.mp4"
+SMEXY = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
+LEZBIAN = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
+BIGBALL = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
 LANG = "https://telegra.ph/file/423414459345bf18310f5.gif"
-CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbjmdrQyje1qa94xto1_500.gif"
-HOT = "https://telegra.ph/file/daad931db960ea40c0fca.gif"
-SMEXY = "https://telegra.ph/file/a23e9fd851fb6bc771686.gif"
-LEZBIAN = "https://telegra.ph/file/5609b87f0bd461fc36acb.gif"
-BIGBALL = "https://i.gifer.com/8ZUg.gif"
+CUTIE = "https://te.legra.ph/file/8d69d976022630da84be0.mp4"
+HOT = "https://te.legra.ph/file/07226a85c3822d6ef3291.mp4"
+SMEXY = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
+LEZBIAN = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
+BIGBALL = "https://te.legra.ph/file/dad70298f059a5fb35bc8.mp4"
 LANG = "https://telegra.ph/file/423414459345bf18310f5.gif"
-CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbjmdrQyje1qa94xto1_500.gif"
+CUTIE = "https://te.legra.ph/file/8d69d976022630da84be0.mp4"
 
 
 @app.on_message(filters.command("horny"))
