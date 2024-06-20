@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 ###
 @app.on_message(filters.command("Mitsurihub"))
-async def daxxhub(_, message):
+async def Mitsurihub(_, message):
     text = message.text[len("/Mitsurihub") :]
     Levi(f"{text}").save(f"Mitsurihub_{message.from_user.id}.png")
     await message.reply_photo(f"Mitsurihub_{message.from_user.id}.png")
