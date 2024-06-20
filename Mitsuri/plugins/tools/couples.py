@@ -14,7 +14,7 @@ from Mitsuri.mongo.couples_db import _get_image, get_couple
 POLICE = [
     [
         InlineKeyboardButton(
-            text="Today Selected Couples ❤️‍🩹",
+            text="𝐎𝐁𝐀𝐍𝐀𝐈 𝐀𝐍𝐃 𝐌𝐈𝐓𝐒𝐔𝐑𝐈 𝐎𝐅 𝐓𝐇𝐄 𝐃𝐀𝐘 💕",
             url=f"https://t.me/Ahjin_sprt",
         ),
     ],
@@ -108,7 +108,7 @@ async def ctest(_, message):
          TXT = f"""
 **ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
 
-{N1} + {N2} = ❤️‍🩹
+{N1} + {N2} = 💕
 
 ɴᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !!**
 """
@@ -132,9 +132,9 @@ async def ctest(_, message):
         # c2_name = (await app.get_users(c2_id)).first_name
          
       #   TXT = f"""
-#**Today's Selected Couples ❤️‍🩹 :
+#**𝐎𝐁𝐀𝐍𝐀𝐈 𝐀𝐍𝐃 𝐌𝐈𝐓𝐒𝐔𝐑𝐈 𝐎𝐅 𝐓𝐇𝐄 𝐃𝐀𝐘 💕 :
 #➖➖➖➖➖➖➖➖➖➖➖➖
-#[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❤️‍🩹
+#[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = 💕
 #➖➖➖➖➖➖➖➖➖➖➖➖
 #Next Couples Will Be Selected On {tomorrow} !!**
 #"""
