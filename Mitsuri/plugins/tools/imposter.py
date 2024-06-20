@@ -1,28 +1,28 @@
 import random 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from DAXXMUSIC.plugins.tools.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
-from DAXXMUSIC import app
+from Mitsuri.plugins.tools.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
+from Mitsuri import app
 
 MISHI = [
-    "https://graph.org/file/f86b71018196c5cfe7344.jpg",
-    "https://graph.org/file/a3db9af88f25bb1b99325.jpg",
-    "https://graph.org/file/5b344a55f3d5199b63fa5.jpg",
-    "https://graph.org/file/84de4b440300297a8ecb3.jpg",
-    "https://graph.org/file/84e84ff778b045879d24f.jpg",
-    "https://graph.org/file/a4a8f0e5c0e6b18249ffc.jpg",
-    "https://graph.org/file/ed92cada78099c9c3a4f7.jpg",
-    "https://graph.org/file/d6360613d0fa7a9d2f90b.jpg"
-    "https://graph.org/file/37248e7bdff70c662a702.jpg",
-    "https://graph.org/file/0bfe29d15e918917d1305.jpg",
-    "https://graph.org/file/16b1a2828cc507f8048bd.jpg",
-    "https://graph.org/file/e6b01f23f2871e128dad8.jpg",
-    "https://graph.org/file/cacbdddee77784d9ed2b7.jpg",
-    "https://graph.org/file/ddc5d6ec1c33276507b19.jpg",
-    "https://graph.org/file/39d7277189360d2c85b62.jpg",
-    "https://graph.org/file/5846b9214eaf12c3ed100.jpg",
-    "https://graph.org/file/ad4f9beb4d526e6615e18.jpg",
-    "https://graph.org/file/3514efaabe774e4f181f2.jpg",
+    "https://te.legra.ph/file/f9565a7c3951eca7b4831.jpg",
+    "https://te.legra.ph/file/b34ebf3a2b894fb0a48d7.jpg",
+    "https://te.legra.ph/file/f4184cc626904dbdffe43.jpg",
+    "https://te.legra.ph/file/f1077eba265ca7dc31b03.jpg",
+    "https://te.legra.ph/file/62261a6a5083ac6ece19a.jpg",
+    "https://te.legra.ph/file/68051cb812bb44ee3a543.jpg",
+    "https://te.legra.ph/file/981e6cfd3663195d170f1.jpg",
+    "https://te.legra.ph/file/5b1409234c333a282a4cf.jpg"
+    "https://te.legra.ph/file/921be7c78df9568152e23.jpg",
+    "https://te.legra.ph/file/068aecd628b3e559146dc.jpg",
+    "https://te.legra.ph/file/78f6a01f83fdbf5e97d17.jpg",
+    "https://te.legra.ph/file/5735f848623c562968bab.jpg",
+    "https://te.legra.ph/file/482bd428b26eebde18160.jpg",
+    "https://te.legra.ph/file/f40dbdb22b575ae928a22.jpg",
+    "https://te.legra.ph/file/829e3d05a8b65785fa644.jpg",
+    "https://te.legra.ph/file/62261a6a5083ac6ece19a.jpg",
+    "https://te.legra.ph/file/d1471af58227db49731fb.jpg",
+    "https://te.legra.ph/file/0fc3165657c1bc41983d0.jpg",
 ]
 
 
@@ -30,8 +30,8 @@ ROY = [
     [
         InlineKeyboardButton(
             text="ᴀᴅᴅ ᴍᴇ",
-            url=f"https://t.me/NexikoBot?startgroup=true"),
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/DAXXSUPPORT")
+            url=f"https://t.me/Mitsuri_Robot?startgroup=true"),
+        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇ", url=f"https://t.me/Ahjin_sprt")
     ],
 ]
 
