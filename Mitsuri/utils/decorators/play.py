@@ -20,7 +20,7 @@ from MItsuri.utils.database import (
     is_active_chat,
     is_maintenance,
 )
-from DAXXMUSIC.utils.inline import botplaylist_markup
+from Mitsuri.utils.inline import botplaylist_markup
 from config import PLAYLIST_IMG_URL, SUPPORT_CHAT, adminlist
 from strings import get_string
 
@@ -37,7 +37,7 @@ def PlayWrapper(command):
                     [
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="DAXXmousAdmin",
+                            callback_data="AnonymousAdmin",
                         ),
                     ]
                 ]
