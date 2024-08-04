@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from Mitsuri import YouTube, app
 from Mitsuri.misc import SUDOERS
-from MItsuri.utils.database import (
+from Mitsuri.utils.database import (
     get_assistant,
     get_cmode,
     get_lang,
