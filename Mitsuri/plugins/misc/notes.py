@@ -4,7 +4,7 @@ from pyrogram import filters
 from Mitsuri.utils.mitsuri_ban import admin_filter
 from Mitsuri.mongo.notesdb import *
 from Mitsuri.utils.notes_func import GetNoteMessage, exceNoteMessageSender, privateNote_and_admin_checker
-from Mitsuri.utils.yumidb import user_admin
+from Mitsuri.utils.mitsudb import user_admin
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup , Message , CallbackQuery
 from pyrogram.enums import ChatMemberStatus
 
