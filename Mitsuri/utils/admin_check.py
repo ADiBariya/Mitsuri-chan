@@ -4,7 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 from pyrogram.enums import ChatType, ChatMemberStatus
 
-client = Client("29422639", "e21bccfd64a01c5762ce81c77379dc7f")
+client = Client("22733269", "d1d8331e5b288c572e8bb6baa7d8f833")
 
 async def admin_check(message: Message) -> bool:
     if not message.from_user:
