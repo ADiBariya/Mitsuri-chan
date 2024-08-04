@@ -1,5 +1,3 @@
-import future
-
 import asyncio
 import os
 import time
@@ -42,10 +40,10 @@ async def ytmusic(client, message: Message):
     user_name = message.from_user.first_name
     chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
 
-    pablo = await client.send_message(message.chat.id, f"sᴇᴀʀᴄʜɪɴɢ, ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+    pablo = await client.send_message(message.chat.id, f"Searching, please wait...")
     if not urlissed:
         await pablo.edit(
-            "🐍 sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ.\n\n» ᴡʜᴀᴛ ᴀ ᴅʀᴀɢ!!"
+            "Song not found on YouTube.\n\n» What a drag!!"
         )
         return
 
@@ -75,15 +73,15 @@ async def ytmusic(client, message: Message):
     try:
         with YoutubeDL(opts) as ytdl:
             infoo = ytdl.extract_info(url, False)
-            round(infoo["duration"] / 60)
+            duration = round(infoo["duration"] / 60)
             ytdl_data = ytdl.extract_info(url, download=True)
 
     except Exception as e:
-        await pablo.edit(f"**ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ.** \n**ᴇʀʀᴏʀ :** `{str(e)}`")
+        await pablo.edit(f"**Failed to download.** \n**Error :** `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-capy = f"❄ ᴛɪᴛʟᴇ : [{thum}]({mo})\n💕 ᴄʜᴀɴɴᴇʟ : {thums}\n✨ sᴇᴀʀᴄʜᴇᴅ : {urlissed}\n🍡 ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ : {request_by}"
+    capy = f"❄ Title : [{thum}]({mo})\n💕 Channel : {thums}\n✨ Searched : {urlissed}\n🍡 Requested by : {chutiya}"
     await client.send_video(
         message.chat.id,
         video=open(file_stark, "rb"),
@@ -95,7 +93,7 @@ capy = f"❄ ᴛɪᴛʟᴇ : [{thum}]({mo})\n💕 ᴄʜᴀɴɴᴇʟ : {thums}\n�
         progress_args=(
             pablo,
             c_time,
-            f"» ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...\n\nᴜᴩʟᴏᴀᴅɪɴɢ `{urlissed}` ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ sᴇʀᴠᴇʀs...💕",
+            f"» Please wait...\n\nUploading `{urlissed}` from YouTube servers...💕",
             file_stark,
         ),
     )
@@ -105,7 +103,7 @@ capy = f"❄ ᴛɪᴛʟᴇ : [{thum}]({mo})\n💕 ᴄʜᴀɴɴᴇʟ : {thums}\n�
             os.remove(files)
 
 
-__mod_name__ = "Vɪᴅᴇᴏ"
+__mod_name__ = "Video"
 __help__ = """ 
 /video to download video song
 /yt to download video song """
