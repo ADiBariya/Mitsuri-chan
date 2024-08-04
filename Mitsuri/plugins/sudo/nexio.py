@@ -4,7 +4,7 @@ from Mitsuri import app, userbot
 from Mitsuri.misc import SUDOERS
 from pyrogram import * 
 from pyrogram.types import *
-from Mitsuri.utils.misturi_ban import admin_filter
+from Mitsuri.utils.mitsuri_ban import admin_filter
 
 
 
