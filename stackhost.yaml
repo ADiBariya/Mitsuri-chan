@@ -8,7 +8,7 @@ commands:
   build:
     - "pip install -r requirements.txt"
   start:
-    - "python3 Mitsuri"
+    - "python3 -m Mitsuri"
 
 repository:
   url: "https://github.com/mikeyy23254/Mitsuri-chan"
