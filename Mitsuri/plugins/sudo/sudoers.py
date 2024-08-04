@@ -13,7 +13,7 @@ from config import BANNED_USERS, OWNER_ID
 
 
 
-@app.on_message(filters.command(["addsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.user(OWNER_ID))
+@app.on_message(filters.command(["addsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "Mitsuri "]) & filters.user(OWNER_ID))
 @language
 async def useradd(client, message: Message, _):
     if not message.reply_to_message:
@@ -30,7 +30,7 @@ async def useradd(client, message: Message, _):
         await message.reply_text(_["sudo_8"])
 
 
-@app.on_message(filters.command(["delsudo", "rmsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.user(OWNER_ID))
+@app.on_message(filters.command(["delsudo", "rmsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "Mitsuri "]) & filters.user(OWNER_ID))
 @language
 async def userdel(client, message: Message, _):
     if not message.reply_to_message:
@@ -48,7 +48,7 @@ async def userdel(client, message: Message, _):
 
 
 
-@app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & ~BANNED_USERS)
+@app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "%", ",", "", ".", "@", "Mitsuri "]) & ~BANNED_USERS)
 async def sudoers_list(client, message: Message):
     keyboard = [[InlineKeyboardButton("๏ ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ ๏", callback_data="check_sudo_list")]]
     reply_markups = InlineKeyboardMarkup(keyboard)
@@ -75,8 +75,8 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
             if user_id != OWNER_ID:
                 try:
                     user = await app.get_users(user_id)
-                    user_mention = user.mention if user else f"**🎁 Sᴜᴅᴏ {count} ɪᴅ:** {user_id}"
-                    caption += f"**🎁 Sᴜᴅᴏ** {count} **»** {user_mention}\n"
+                    user_mention = user.mention if user else f"**❤️‍🩹Sᴜᴅᴏ {count} ɪᴅ:** {user_id}"
+                    caption += f"**❤️‍🩹Sᴜᴅᴏ** {count} **»** {user_mention}\n"
                     button_text = f"๏ ᴠɪᴇᴡ sᴜᴅᴏ {count} ๏ "
                     keyboard.append([InlineKeyboardButton(button_text, url=f"tg://openmessage?user_id={user_id}")]
                     )
@@ -100,7 +100,7 @@ async def back_to_main_menu(client, callback_query: CallbackQuery):
 
 
 
-@app.on_message(filters.command(["delallsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.user(OWNER_ID))
+@app.on_message(filters.command(["delallsudo"], prefixes=["/", "!", "%", ",", "", ".", "@", "Mitsuri "]) & filters.user(OWNER_ID))
 @language
 async def del_all_sudo(client, message: Message, _):
     count = len(SUDOERS) - 1  # Exclude the admin from the count
