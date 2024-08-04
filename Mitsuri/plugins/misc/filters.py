@@ -4,8 +4,8 @@ from config import BOT_USERNAME
 from Mitsuri.utils.mitsuri_ban import admin_filter
 from Mitsuri.mongo.filtersdb import *
 from Mitsuri.utils.filters_func import GetFIlterMessage, get_text_reason, SendFilterMessage
-from Mitsuri.utils.yumidb import user_admin
-from Mitsuri.utils.yumidb import *
+from Mitsuri.utils.mitsudb import user_admin
+from Mitsuri.utils.mitsudb import *
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
