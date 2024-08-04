@@ -30,12 +30,12 @@ async def get_userid_from_username(username):
         user = await app.get_users(username)
     except:
         return None
-    
+
     user_obj = [user.id, user.first_name]
     return user_obj
 
 
-async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, time=None):
+async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason=None, time=None):
     try:
         await app.ban_chat_member(chat_id, user_id)
     except ChatAdminRequired:
@@ -48,7 +48,7 @@ async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, t
         if user_id == 6711389550:
             msg_text = "why should i ban myself? sorry"
             return msg_text, False
-        
+
         msg_text = f"opps!!\n{e}"
         return msg_text, False
 
@@ -57,14 +57,13 @@ async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, t
 
     msg_text += f""
     msg_text += f"{user_mention} was banned by {admin_mention}\n"
-    
+
     if reason:
-        msg_text += f"Reason: `{reason}`\n"
+        msg_text += f"Reason: {reason}\n"
     if time:
-        msg_text += f"Time: `{time}`\n"
+        msg_text += f"Time: {time}\n"
 
     return msg_text, True
-
 
 async def unban_user(user_id, first_name, admin_id, admin_name, chat_id):
     try:
