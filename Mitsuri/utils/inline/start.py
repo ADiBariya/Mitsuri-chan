@@ -8,7 +8,7 @@ def start_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["Updates"], url=f"https://t.me/Mitsuri_Updates"
+                text=_["S_B_1"], url=f"https://t.me/Mitsuri_Robot?startgroup=true"
             ),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
         ],
