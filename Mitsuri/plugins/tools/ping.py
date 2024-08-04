@@ -18,7 +18,7 @@ async def ping_com(client, message: Message, _):
     start = datetime.now()
     response = await message.reply_video(
         video="https://te.legra.ph/file/c3954ed94a4bf5afff86b.mp4",
-        caption=_["ping_1"].format(app.mention),
+        caption=_["By:- @Ahjin_Sprt"].format(app.mention),
     )
     pytgping = await Mitsuri.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
