@@ -84,7 +84,8 @@ admin_38 : "» ᴀᴅᴅᴇᴅ 1 ᴜᴘᴠᴏᴛᴇ."
 admin_39 : "» ʀᴇᴍᴏᴠᴇᴅ 1 ᴜᴘᴠᴏᴛᴇ."
 admin_40 : "ᴜᴘᴠᴏᴛᴇᴅ."
 
-start_1 : "{0} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ.\n\n<b>✫ ᴜᴘᴛɪᴍᴇ :</b> {1}"
+start_1 : "Ara Ara!!!
+I'm Awake since: {1}"
 start_2 : "Hello there, {0} 🧚‍♂️
 I am an AI Intergrated Anime Themed Advanced Group Management and Music Bot with some fun features.
 Make sure you read About Me section below."
