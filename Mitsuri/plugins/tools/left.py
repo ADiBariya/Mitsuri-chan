@@ -1,10 +1,10 @@
 
 import asyncio
 import os
+
 from Mitsuri import app
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-
 
 
 # Define a handler for when a user leaves, is banned, or is kicked from a group
@@ -24,7 +24,7 @@ async def handle_user_update(client: Client, message: Message):
     user = message.from_user
 
     # Check if the user is already in the banned list
-banned_users = []
+    banned_users = []
     if user.id in banned_users:
         return
 
@@ -35,13 +35,7 @@ banned_users = []
     await message.reply_video(
         video="https://telegra.ph/file/0afc7e12967295d0414ce.mp4",
         caption=f"{user.first_name} has been {action} from the group.",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Unban", callback_data=f"unban_{user.id}")
-                ]
-            ]
-        ),
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Unban", callback_data=f"unban_{user.id}")]]),
     )
 
 
@@ -57,7 +51,7 @@ async def handle_callback_query(client: Client, callback_query: Message):
         banned_users.remove(user_id)
 
         # Send a message to the group that the user has been unbanned
-        await callback_query.answer(f"User has been unbanned.")
+        await callback_query.answer("User has been unbanned.")
 
         # Send a message to the unbanned user
         await client.send_message(user_id, "You have been unbanned from the group.")
