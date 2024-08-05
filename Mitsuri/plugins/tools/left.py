@@ -32,6 +32,8 @@ async def handle_user_update(client: Client, message: Message):
     banned_users.append(user.id)
 
     # Send a message to the group with the user's photo and caption
+    
+if isinstance(message, Message):
     await message.reply_video(
         video="https://telegra.ph/file/0afc7e12967295d0414ce.mp4",
         caption=f"{user.first_name} has been {action} from the group.",
