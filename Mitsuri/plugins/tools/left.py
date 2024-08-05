@@ -24,6 +24,7 @@ async def handle_user_update(client: Client, message: Message):
     user = message.from_user
 
     # Check if the user is already in the banned list
+banned_users = []
     if user.id in banned_users:
         return
 
