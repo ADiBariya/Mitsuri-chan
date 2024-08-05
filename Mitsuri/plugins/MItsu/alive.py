@@ -34,3 +34,6 @@ async def alive_cmd(client, message: Message):
             ]
         ),
     )
+
+
+#xyzfh
