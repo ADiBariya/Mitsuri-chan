@@ -1,125 +1,61 @@
-from Mitsuri import app
-from pyrogram import Client, filters
-from pyrogram.errors import RPCError
-from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, InlineKeyboardButton
-from os import environ
-from typing import Union, Optional
-from PIL import Image, ImageDraw, ImageFont
 import asyncio
+import os
+from Mitsuri import app as Client
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
-# --------------------------------------------------------------------------------- #
 
-get_font = lambda font_size, font_path: ImageFont.truetype(font_path, font_size)
-resize_text = (
-    lambda text_size, text: (text[:text_size] + "...").upper()
-    if len(text) > text_size
-    else text.upper()
-)
 
-# --------------------------------------------------------------------------------- #
-
-async def get_userinfo_img(
-    bg_path: str,
-    font_path: str,
-    user_id: Union[int, str],
-    profile_path: Optional[str] = None
-):
-    bg = Image.open(bg_path)
-
-    if profile_path:
-        img = Image.open(profile_path)
-        mask = Image.new("L", img.size, 0)
-        draw = ImageDraw.Draw(mask)
-        draw.pieslice([(0, 0), img.size], 0, 360, fill=255)
-
-        circular_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        circular_img.paste(img, (0, 0), mask)
-        resized = circular_img.resize((400, 400))
-        bg.paste(resized, (440, 160), resized)
-
-    img_draw = ImageDraw.Draw(bg)
-
-    img_draw.text(
-        (529, 627),
-        text=str(user_id).upper(),
-        font=get_font(46, font_path),
-        fill=(255, 255, 255),
-    )
-
-    path = f"./userinfo_img_{user_id}.png"
-    bg.save(path)
-    return path
-
-# --------------------------------------------------------------------------------- #
-
-bg_path = "Mitsuri/assets/userinfo.png"
-font_path = "Mitsuri/assets/hiroko.ttf"
-
-# --------------------------------------------------------------------------------- #
-
-# -------------
-
-@app.on_chat_member_updated(filters.group, group=20)
-async def member_has_left(client: app, member: ChatMemberUpdated):
-
-    if (
-        not member.new_chat_member
-        and member.old_chat_member.status not in {
-            "banned", "left", "restricted"
-        }
-        and member.old_chat_member
-    ):
-        pass
+# Define a handler for when a user leaves, is banned, or is kicked from a group
+@client.on_chat_member_update()
+async def handle_user_update(client: Client, message: Message):
+    # Check if the user was banned, kicked, or left
+    if message.new_chat_member is None:
+        action = "left"
+    elif message.new_chat_member.status == "kicked":
+        action = "kicked"
+    elif message.new_chat_member.status == "banned":
+        action = "banned"
     else:
         return
 
-    user = (
-        member.old_chat_member.user
-        if member.old_chat_member
-        else member.from_user
+    # Get the user's information
+    user = message.from_user
+
+    # Check if the user is already in the banned list
+    if user.id in banned_users:
+        return
+
+    # Add the user to the banned list
+    banned_users.append(user.id)
+
+    # Send a message to the group with the user's photo and caption
+    await message.reply_video(
+        video="https://telegra.ph/file/0afc7e12967295d0414ce.mp4",
+        caption=f"{user.first_name} has been {action} from the group.",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("Unban", callback_data=f"unban_{user.id}")
+                ]
+            ]
+        ),
     )
 
-    # Check if the user has a profile photo
-    if user.photo and user.photo.big_file_id:
-        try:
-            # Add the photo path, caption, and button details
-            photo = await app.download_media(user.photo.big_file_id)
 
-            welcome_photo = await get_userinfo_img(
-                bg_path=bg_path,
-                font_path=font_path,
-                user_id=user.id,
-                profile_path=photo,
-            )
-        
-            caption = f"**#New_Member_Left**\n\n**๏** {user.mention} **ʜᴀs ʟᴇғᴛ ᴛʜɪs ɢʀᴏᴜᴘ**\n**๏ sᴇᴇ ʏᴏᴜ sᴏᴏɴ ᴀɢᴀɪɴ..!**"
-            button_text = "๏ ᴠɪᴇᴡ ᴜsᴇʀ ๏"
+# Define a handler for when the bot receives a callback query
+@client.on_callback_query()
+async def handle_callback_query(client: Client, callback_query: Message):
+    # Check if the callback query is for unbanning a user
+    if callback_query.data.startswith("unban_"):
+        # Get the user's ID from the callback data
+        user_id = int(callback_query.data.split("_")[1])
 
-            # Generate a deep link to open the user's profile
-            deep_link = f"tg://openmessage?user_id={user.id}"
+        # Remove the user from the banned list
+        banned_users.remove(user_id)
 
-            # Send the message with the photo, caption, and button
-            message = await client.send_photo(
-                chat_id=member.chat.id,
-                photo=welcome_photo,
-                caption=caption,
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton(button_text, url=deep_link)]
-                ])
-            )
+        # Send a message to the group that the user has been unbanned
+        await callback_query.answer(f"User has been unbanned.")
 
-            # Schedule a task to delete the message after 30 seconds
-            async def delete_message():
-                await asyncio.sleep(30)
-                await message.delete()
-
-            # Run the task
-            asyncio.create_task(delete_message())
-            
-        except RPCError as e:
-            print(e)
-            return
-    else:
-        # Handle the case where the user has no profile photo
-        print(f"User {user.id} has no profile photo.")
-        
+        # Send a message to the unbanned user
+        await client.send_message(user_id, "You have been unbanned from the group.")
