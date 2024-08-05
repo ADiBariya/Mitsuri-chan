@@ -1,13 +1,13 @@
 import asyncio
 import os
-from Mitsuri import app as Client
+from Mitsuri import app
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 
 
 # Define a handler for when a user leaves, is banned, or is kicked from a group
-@client.on_chat_member_update()
+@app.on_chat_member_update()
 async def handle_user_update(client: Client, message: Message):
     # Check if the user was banned, kicked, or left
     if message.new_chat_member is None:
@@ -44,7 +44,7 @@ async def handle_user_update(client: Client, message: Message):
 
 
 # Define a handler for when the bot receives a callback query
-@client.on_callback_query()
+@app.on_callback_query()
 async def handle_callback_query(client: Client, callback_query: Message):
     # Check if the callback query is for unbanning a user
     if callback_query.data.startswith("unban_"):
