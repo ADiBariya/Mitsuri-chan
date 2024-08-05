@@ -18,7 +18,8 @@ class Mitsuri(Client):
             max_concurrent_transmissions=7,
         )
 
-    async def start(self):
+    
+async def start(self):
     await super().start()
     self.id = self.me.id
     self.name = self.me.first_name + " " + (self.me.last_name or "")
