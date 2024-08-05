@@ -14,7 +14,7 @@ from Mitsuri.mongo.couples_db import _get_image, get_couple
 POLICE = [
     [
         InlineKeyboardButton(
-            text="𝐎𝐁𝐀𝐍𝐀𝐈 𝐀𝐍𝐃 𝐌𝐈𝐓𝐒𝐔𝐑𝐈 𝐎𝐅 𝐓𝐇𝐄 𝐃𝐀𝐘 💕",
+            text="Join",
             url=f"https://t.me/Ahjin_sprt",
         ),
     ],
@@ -49,7 +49,7 @@ async def ctest(_, message):
     try:
      #  is_selected = await get_couple(cid, today)
      #  if not is_selected:
-         msg = await message.reply_text("ɢᴇɴᴇʀᴀᴛɪɴɢ ᴄᴏᴜᴘʟᴇs ɪᴍᴀɢᴇ...")
+         msg = await message.reply_text("Finding Today's Selected Couples...")
          #GET LIST OF USERS
          list_of_users = []
 
@@ -106,11 +106,11 @@ async def ctest(_, message):
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ :
+**Couples of the Day :
 
 {N1} + {N2} = 💕
 
-ɴᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !!**
+Now come back on {tomorrow} for new selected couples!!**
 """
     
          await message.reply_photo(f"test_{cid}.png", caption=TXT, reply_markup=InlineKeyboardMarkup(POLICE),
@@ -132,11 +132,9 @@ async def ctest(_, message):
         # c2_name = (await app.get_users(c2_id)).first_name
          
       #   TXT = f"""
-#**𝐎𝐁𝐀𝐍𝐀𝐈 𝐀𝐍𝐃 𝐌𝐈𝐓𝐒𝐔𝐑𝐈 𝐎𝐅 𝐓𝐇𝐄 𝐃𝐀𝐘 💕 :
-#➖➖➖➖➖➖➖➖➖➖➖➖
-#[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = 💕
-#➖➖➖➖➖➖➖➖➖➖➖➖
-#Next Couples Will Be Selected On {tomorrow} !!**
+#**Today's Selected Couples ❤️‍🩹:
+#[{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = Enjoy your Day ❤️‍🩹
+#Now come back on {tomorrow} for new selected couples!!!!**
 #"""
  #        await message.reply_photo(b, caption=TXT)
         # await msg.delete()
