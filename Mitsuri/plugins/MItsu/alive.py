@@ -18,7 +18,7 @@ Hᴇʏ, ɪᴛᴢ Mɪᴛsᴜʀɪ
 alive_vid = "https://telegra.ph/file/a8ad8e669231f392fa245.mp4"
 
 
-@sung.on_message(get_command("alive"))
+@sung.on_message(filters.command("alive"))
 async def alive_cmd(client, message: Message):
     await message.reply_video(
         alive_vid,
