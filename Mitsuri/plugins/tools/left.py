@@ -1,3 +1,4 @@
+
 import asyncio
 import os
 from Mitsuri import app
@@ -7,7 +8,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
 
 # Define a handler for when a user leaves, is banned, or is kicked from a group
-@app.on_chat_member_update()
+@app.on_chat_member_updated()
 async def handle_user_update(client: Client, message: Message):
     # Check if the user was banned, kicked, or left
     if message.new_chat_member is None:
