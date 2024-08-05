@@ -33,9 +33,8 @@ async def handle_user_update(client: Client, message: Message):
 
     # Send a message to the group with the user's photo and caption
     
-if isinstance(message, Message):
-    await message.reply_video(
-        video="https://telegra.ph/file/0afc7e12967295d0414ce.mp4",
+    await message.reply_photo(
+        photo="https://telegra.ph/file/4d38a36ad2f122c3714f5.jpg",
         caption=f"{user.first_name} has been {action} from the group.",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Unban", callback_data=f"unban_{user.id}")]]),
     )
