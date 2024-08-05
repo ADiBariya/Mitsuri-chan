@@ -2,7 +2,7 @@ import time
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
-from Mitsuri import app as sung, get_command, StartTime
+from Mitsuri import app as sung, StartTime
 from Mitsuri.utils.formatters import get_readable_time
 
 final_txt = """
