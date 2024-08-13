@@ -1,12 +1,22 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+FROM python:3.11-slim
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Install Node.js
+RUN apt-get update && apt-get install -y nodejs npm
 
-COPY . /app/
-WORKDIR /app/
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+# Set the working directory to /app
+WORKDIR /app
 
-CMD bash start
+# Copy the requirements file
+COPY requirements.txt .
+
+# Install the dependencies
+RUN pip install -r requirements.txt
+
+# Copy the application code
+COPY . .
+
+# Expose the port
+EXPOSE 8080
+
+# Run the command to start the application
+CMD ["python", "app.py"]
