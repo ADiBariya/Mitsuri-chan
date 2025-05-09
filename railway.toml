@@ -1,0 +1,6 @@
+
+[deploy]
+startCommand = "python3 -m mitsuri"
+
+[service]
+type = "worker"
