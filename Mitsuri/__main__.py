@@ -38,7 +38,15 @@ async def init():
         importlib.import_module("Mitsuri.plugins" + all_module)
     LOGGER("Mitsuri.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...")
     await userbot.start()
-    await Mitsuri.start()
+
+    # Add try-except around Mitsuri start
+    try:
+        await Mitsuri.start()
+    except errors.FloodWait as e:
+        LOGGER(__name__).error(f"Flood wait for {e.x} seconds during startup. Retrying...")
+        await asyncio.sleep(e.x)
+        await Mitsuri.start()
+
     try:
         await Mitsuri.stream_call("https://te.legra.ph/file/eff246d0c47ea973d0af5.mp4")
     except NoActiveGroupCall:
@@ -49,14 +57,11 @@ async def init():
     except:
         pass
     await Mitsuri.decorators()
-    LOGGER("Mitsuri").info(
-        "\n  By Ahjin_Sprt\n"
-    )
+    LOGGER("Mitsuri").info("\n  By Ahjin_Sprt\n")
     await idle()
     await app.stop()
     await userbot.stop()
     LOGGER("Mitsuri").info("Mitsuri ..")
-
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(init())
