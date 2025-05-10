@@ -1,8 +1,6 @@
 from pyrogram import Client, errors
-from pyrogram.enums import ChatMemberStatus, ParseMode
-
+from pyrogram.enums import ChatMemberStatus
 import config
-
 from ..logging import LOGGER
 
 
@@ -19,7 +17,14 @@ class Mitsuri(Client):
         )
 
     async def start(self):
-        await super().start()
+        try:
+            await super().start()
+        except errors.FloodWait as e:
+            # Handle the FloodWait exception (e.g., wait and retry)
+            LOGGER(__name__).error(f"Flood wait for {e.x} seconds. Retrying...")
+            await asyncio.sleep(e.x)  # Wait for the specified duration
+            await self.start()  # Retry starting the bot
+
         self.id = self.me.id
         self.name = self.me.first_name + " " + (self.me.last_name or "")
         self.username = self.me.username
@@ -43,6 +48,7 @@ class Mitsuri(Client):
                 "Please promote your bot as an admin in your log group/channel."
             )
             exit()
+
         LOGGER(__name__).info(f"Mitsuri Started as {self.name}")
 
     async def stop(self):
